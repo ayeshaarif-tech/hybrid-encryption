@@ -1,5 +1,4 @@
-```markdown
-# Hybrid Encryption Service
+# Hybrid Encryption Service 
 
 A dual-layer encryption module developed for secure data transmission between IoT devices (e.g., Raspberry Pi) and backend services. This repository implements a "Hybrid" approach by combining standard **AES-256 (EAX Mode)** with a custom **XOR bit-manipulation layer** for enhanced data security.
 
