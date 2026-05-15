@@ -29,13 +29,14 @@ pip install pycryptodome
 ```
 
 ### Installation & Folder Structure
+```bash
 hybrid-encryption/
 ├── README.md
 └── services/
     ├── __init__.py
     ├── encryption.py
     └── decryption.py
-    
+```
 ### Usage Example
 1. Encrypting Data (Sender Side / IoT Device):
 
