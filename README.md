@@ -23,28 +23,27 @@ The system follows a specific sequence to ensure maximum entropy:
 * `pycryptodome` library
 
 Install the required library using pip:
+
 ```bash
 pip install pycryptodome
 ```
 
-###Installation & Folder Structure
+### Installation & Folder Structure
 hybrid-encryption/
 ├── README.md
 └── services/
     ├── __init__.py
     ├── encryption.py
     └── decryption.py
-Usage Example
+    
+### Usage Example
 1. Encrypting Data (Sender Side / IoT Device):
 
-Python
-from services.encryption import encrypt_data
-
-### The data to secure
-data = "Sensitive Smart City Sensor Data"
-
-### Returns a dictionary with nonce, tag, ciphertext, and key
 ```bash
+from Pythonservices.encryption import encrypt_data
+# The data to secure
+data = "Sensitive Smart City Sensor Data"
+# Returns a dictionary with nonce, tag, ciphertext, and key
 payload = encrypt_data(data)
 print("Encrypted Payload:", payload)
 ```
@@ -52,9 +51,7 @@ print("Encrypted Payload:", payload)
 2. Decrypting Data (Receiver Side / Backend):
 ```bash
 from services.decryption import decrypt_data
-```
-### Pass the payload dictionary received from the sender
-```bash
+# Pass the payload dictionary received from the sender
 decrypted_text = decrypt_data(payload)
 print(f"Decoded Result: {decrypted_text}")
 ```
