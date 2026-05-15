@@ -4,19 +4,19 @@ A dual-layer encryption module developed for secure data transmission between Io
 
 ---
 
-## 🛡️ Features
+##  Features
 * **Two-Layer Security:** Combines cryptographic standards with a custom logic layer to prevent simple pattern analysis.
 * **Authenticated Encryption:** Uses AES-EAX mode to ensure both **confidentiality** and **integrity** (via MAC tags).
 * **Hex-Encoded Payload:** Outputs data in a web-friendly hex format, ideal for JSON APIs and MQTT protocols used in IoT.
 * **Simplified Integration:** Modularized structure for easy import into other Python projects.
 
-## 🛠️ Architecture
+##  Architecture
 The system follows a specific sequence to ensure maximum entropy:
 
 1.  **Encryption:** `Plaintext` → `XOR Cipher` → `AES-EAX` → `Hex Output`
 2.  **Decryption:** `Hex Input` → `AES-EAX Verify` → `XOR Decipher` → `Plaintext`
 
-## 🚀 Getting Started
+##  Steps
 
 ### Prerequisites
 * Python 3.x
@@ -27,7 +27,7 @@ Install the required library using pip:
 pip install pycryptodome
 ```
 
-**Installation & Folder Structure**
+###Installation & Folder Structure
 hybrid-encryption/
 ├── README.md
 └── services/
@@ -53,17 +53,17 @@ print("Encrypted Payload:", payload)
 ```bash
 from services.decryption import decrypt_data
 ```
-# Pass the payload dictionary received from the sender
+### Pass the payload dictionary received from the sender
 ```bash
 decrypted_text = decrypt_data(payload)
 print(f"Decoded Result: {decrypted_text}")
 ```
 
-### 🔒 Security Implementation Details
+##  Security Implementation Details
 XOR Layer: Acts as a primary obfuscation step using the same key as the AES cipher.
 
 AES-EAX: Provides high-security authenticated encryption, protecting against bit-flipping attacks and ensuring the data has not been tampered with during transit.
 
-## 📄 License
+##  License
 This module was designed as part of a Final Year Project (FYP) focused on Private Blockchain and Secure Data Storage.
 Developed for Smart City Security Research.
