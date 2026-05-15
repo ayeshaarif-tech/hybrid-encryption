@@ -25,6 +25,7 @@ The system follows a specific sequence to ensure maximum entropy:
 Install the required library using pip:
 ```bash
 pip install pycryptodome
+```
 
 **Installation & Folder Structure**
 hybrid-encryption/
@@ -39,25 +40,30 @@ Usage Example
 Python
 from services.encryption import encrypt_data
 
-# The data to secure
+### The data to secure
 data = "Sensitive Smart City Sensor Data"
 
-# Returns a dictionary with nonce, tag, ciphertext, and key
+### Returns a dictionary with nonce, tag, ciphertext, and key
+```bash
 payload = encrypt_data(data)
 print("Encrypted Payload:", payload)
+```
+
 2. Decrypting Data (Receiver Side / Backend):
-
-Python
+```bash
 from services.decryption import decrypt_data
-
+```
 # Pass the payload dictionary received from the sender
+```bash
 decrypted_text = decrypt_data(payload)
 print(f"Decoded Result: {decrypted_text}")
-🔒 Security Implementation Details
+```
+
+### 🔒 Security Implementation Details
 XOR Layer: Acts as a primary obfuscation step using the same key as the AES cipher.
 
 AES-EAX: Provides high-security authenticated encryption, protecting against bit-flipping attacks and ensuring the data has not been tampered with during transit.
 
-📄 License
+## 📄 License
 This module was designed as part of a Final Year Project (FYP) focused on Private Blockchain and Secure Data Storage.
 Developed for Smart City Security Research.
